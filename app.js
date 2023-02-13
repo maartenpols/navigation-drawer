@@ -33,4 +33,10 @@ window.addEventListener("load", function (event) {
   button.onclick = () => {
     sideBar.classList.toggle("collapse");
   };
+
+  let toggleMenu = document.getElementById("navigation-drawer-toggle");
+
+  toggleMenu.onclick = () => {
+    sideBar.classList.toggle("hide");
+  };
 });

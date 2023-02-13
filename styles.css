@@ -22,7 +22,10 @@
   left: 3px;
   top: 20px;
   cursor: pointer;
-  transition: all 0.3 ease-out;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .navigation-drawer-top {
   height: 56px;
@@ -76,6 +79,10 @@
 .drawer-item-expand {
   position: absolute;
   right: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .drawer-item-text {
   font-family: "Roboto", sans-serif;
@@ -109,7 +116,9 @@
 .has-sub:hover path,
 .has-sub:hover,
 .no-sub:hover path,
-.no-sub:hover {
+.no-sub:hover,
+.navigation-drawer-toggle:hover .nav-toggle path,
+.navigation-drawer-toggle:hover .nav-toggle:hover {
   fill: var(--primary-blue);
 }
 
@@ -186,4 +195,24 @@
   height: 32px;
   object-fit: none;
   object-position: left;
+}
+.navigation-drawer-toggle {
+  position: absolute;
+  width: 56px;
+  left: 4px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px 4px 16px;
+}
+.navigation-drawer-toggle:hover {
+  background-color: #dee3e9;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.navigation-drawer.hide {
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease-out;
 }
