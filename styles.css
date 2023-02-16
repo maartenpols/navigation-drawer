@@ -5,22 +5,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
+  /* font-size: 55%; */
 }
 .navigation-drawer {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 290px;
-  height: 100vh;
+  width: 29rem;
+  min-height: 100vh;
   background-color: var(--primary-blue);
-  padding-top: 10px;
+  padding-top: 1rem;
   transition: width 0.3s ease-out;
 }
 .button-collapse {
   position: absolute;
-  left: 3px;
-  top: 20px;
+  left: 0.3rem;
+  top: 2rem;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -28,11 +30,14 @@
   transition: all 0.3s ease;
 }
 .navigation-drawer-top {
-  height: 56px;
+  height: 5.6rem;
+  width: 100%;
 }
 .navigation-logo {
   position: absolute;
-  left: 32px;
+  left: 3.2rem;
+  height: 3.2rem !important;
+  width: 6.4rem;
 }
 /* items */
 .navigation-drawer-items {
@@ -41,25 +46,23 @@
   align-items: flex-start;
   width: 100%;
   /* background-color: aqua; */
-  padding-left: 12px;
+  padding-left: 1.2rem;
 }
 .drawer-group {
   width: 100%;
-  /* padding-left: 12px; */
-  /* padding-right: 12px; */
 }
 .drawer-item {
   position: relative;
-  height: 56px;
+  height: 5.6rem;
   width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 8px;
+  padding-left: 0.8rem;
   cursor: pointer;
 }
 .sub-item {
-  padding-left: 44px;
-  padding-right: 12px;
+  padding-left: 4.4rem;
+  padding-right: 1.2rem;
 }
 .sub-item-content {
   width: 100%;
@@ -70,7 +73,7 @@
 .sub-item:hover,
 .no-sub:hover {
   background-color: #dee3e9;
-  border-radius: 100px;
+  border-radius: 10rem;
   /* background-clip: content-box; */
 }
 .sub-item:hover .drawer-item-text {
@@ -78,7 +81,7 @@
 }
 .drawer-item-expand {
   position: absolute;
-  right: 5px;
+  right: 0.5rem;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -88,8 +91,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.4rem;
+  line-height: 2rem;
   letter-spacing: 0.1px;
   color: #e4e2e3;
   text-decoration: none;
@@ -101,12 +104,12 @@
 }
 
 .item-icon {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .has-sub:hover {
   background-color: #dee3e9;
-  border-radius: 100px 0 0 100px;
+  border-radius: 10rem 0 0 10rem;
 }
 
 .drawer-item:hover .drawer-item-text {
@@ -132,13 +135,13 @@
 }
 .has-sub.active ~ .sub-item {
   opacity: 1;
-  height: 56px;
+  height: 5.6rem;
   transition: height 0.3s ease-out;
 }
 
 .item-add {
   opacity: 0;
-  margin-right: 14px;
+  margin-right: 1.4rem;
 }
 
 .sub-item:hover .item-add {
@@ -146,11 +149,11 @@
 }
 
 .item-add:hover {
-  padding: 6px;
-  margin-right: 8px;
+  padding: 0.6rem;
+  margin-right: 0.8rem;
   background-color: #cae6fd;
   /* background-clip: content-box; */
-  border-radius: 100px;
+  border-radius: 10rem;
   transform: scale(1.2);
 }
 
@@ -174,45 +177,63 @@
   .navigation-drawer-items
   .drawer-group
   .no-sub:hover {
-  height: 40px;
-  width: 40px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  height: 4rem;
+  width: 4rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   background: transparent;
-  border-radius: 40px;
+  border-radius: 4rem;
   background-color: #dee3e9;
 }
 
 .navigation-drawer.collapse {
-  width: 64px;
+  width: 6.4rem;
   transition: width 0.3s ease-out;
 }
 .navigation-drawer.collapse .button-collapse {
   transform: rotate(180deg);
 }
 .navigation-drawer.collapse .navigation-logo {
-  width: 28px;
-  height: 32px;
+  width: 2.8rem;
+  height: 3.2rem;
   object-fit: none;
   object-position: left;
 }
 .navigation-drawer-toggle {
   position: absolute;
-  width: 56px;
-  left: 4px;
-  bottom: 16px;
+  width: 5.6rem;
+  left: 0.4rem;
+  bottom: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 16px 4px 16px;
+  padding: 0.4rem 1.6rem 0.4rem 1.6rem;
+  opacity: 0;
 }
 .navigation-drawer-toggle:hover {
   background-color: #dee3e9;
-  border-radius: 100px;
+  border-radius: 10rem;
   cursor: pointer;
 }
 .navigation-drawer.hide {
   opacity: 0;
   width: 0;
   transition: all 0.3s ease-out;
+}
+.menu-divider {
+  width: 100%;
+  height: 1px;
+  padding-left: 0.4rem;
+  padding-right: 1.6rem;
+}
+.menu-divider hr {
+  border: 1px solid #cac4d0;
+}
+.navigation-drawer.collapse .navigation-drawer-items .no-rail {
+  opacity: 0;
+  height: 0;
+}
+
+.navigation-drawer .navigation-drawer-toggle.show {
+  opacity: 1;
 }
