@@ -1,11 +1,14 @@
 :root {
   --primary-blue: rgba(29, 57, 75, 1);
+  --base-size: 55.5%;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 62.5%;
+}
+html {
+  font-size: var(--base-size);
   /* font-size: 55%; */
 }
 .navigation-drawer {
@@ -20,9 +23,9 @@
   transition: width 0.3s ease-out;
 }
 .button-collapse {
-  position: absolute;
+  /* position: absolute;
   left: 0.3rem;
-  top: 2rem;
+  top: 2rem; */
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -34,20 +37,23 @@
   width: 100%;
 }
 .navigation-logo {
-  position: absolute;
-  left: 3.2rem;
-  height: 3.2rem !important;
-  width: 6.4rem;
+  /* position: absolute;
+  left: 3.2rem; */
+  width: auto;
+  height: 32px;
+  /* transition: all 0.3 ease; */
 }
 /* items */
 .navigation-drawer-items {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 100%;
   /* background-color: aqua; */
-  padding-left: 1.2rem;
+  /* padding-left: 1.2rem; */
 }
+
 .drawer-group {
   width: 100%;
 }
@@ -58,8 +64,10 @@
   display: flex;
   align-items: center;
   padding-left: 0.8rem;
+  padding-right: 0.8rem;
   cursor: pointer;
 }
+
 .sub-item {
   padding-left: 4.4rem;
   padding-right: 1.2rem;
@@ -104,7 +112,8 @@
 }
 
 .item-icon {
-  margin-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .has-sub:hover {
@@ -177,10 +186,10 @@
   .navigation-drawer-items
   .drawer-group
   .no-sub:hover {
-  height: 4rem;
-  width: 4rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  /* height: 4rem; */
+  /* width: 4rem; */
+  /* margin-top: 0.8rem; */
+  /* margin-bottom: 0.8rem; */
   background: transparent;
   border-radius: 4rem;
   background-color: #dee3e9;
@@ -194,8 +203,8 @@
   transform: rotate(180deg);
 }
 .navigation-drawer.collapse .navigation-logo {
-  width: 2.8rem;
-  height: 3.2rem;
+  width: 28px;
+  height: 32px;
   object-fit: none;
   object-position: left;
 }
@@ -236,4 +245,8 @@
 
 .navigation-drawer .navigation-drawer-toggle.show {
   opacity: 1;
+}
+.item-icon > svg,
+.drawer-item-expand {
+  transform: scale(calc(var(--base-size) * 1.6));
 }
