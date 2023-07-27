@@ -51,7 +51,7 @@ html {
   background-color: var(--primary-blue);
   padding-top: 1rem;
   transition: width 0.3s ease;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .navigation-drawer-button {
   position: absolute;
