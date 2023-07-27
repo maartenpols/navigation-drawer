@@ -22,6 +22,9 @@ window.addEventListener("load", function (event) {
           document
             .getElementById("navigation-drawer")
             .classList.toggle("collapse");
+            document
+      .getElementById("navigation-drawer-toggle")
+      .classList.toggle("show");
         }
       }
     });
@@ -42,4 +45,10 @@ window.addEventListener("load", function (event) {
   toggleMenu.onclick = () => {
     sideBar.classList.toggle("hide");
   };
+
+  let toggleMenuMain = document.getElementById("navigation-drawer-button");
+  toggleMenuMain.onclick = () => {
+    sideBar.classList.toggle("hide");
+  };
+
 });

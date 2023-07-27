@@ -1,5 +1,10 @@
 :root {
   --primary-blue: rgba(29, 57, 75, 1);
+  /* --primary-blue: #dee3e9; */
+  --on-surface: #dee3e9;
+  /* --on-surface: rgba(29, 57, 75, 1);; */
+  --tooltip-background: #6D6D6D;
+  --tooltip-text: #FFF;
   --base-size: 55.5%;
 }
 * {
@@ -10,6 +15,31 @@
 html {
   font-size: var(--base-size);
   /* font-size: 55%; */
+}
+.item-icon svg path,
+#button-collapse path {
+  fill: var(--on-surface)
+}
+
+.navigation-drawer.collapse .tooltip:before {
+  content: attr(data-text);
+  position:absolute;
+  z-index: 1;
+
+  background-color: aqua;
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-text);
+  display:none;
+  transform: translate(7.2rem, -1.2rem);
+  font-family: "Roboto", sans-serif;
+}
+.navigation-drawer.collapse .tooltip:hover:before {
+  display:inline-block;
+  margin-top: 2.8rem;
 }
 .navigation-drawer {
   position: relative;
@@ -22,26 +52,52 @@ html {
   padding-top: 1rem;
   transition: width 0.3s ease-out;
 }
-.button-collapse {
-  /* position: absolute;
-  left: 0.3rem;
-  top: 2rem; */
+.navigation-drawer-button {
+  position:absolute;
+  /* left: 0; */
+  /* top: 0; */
+  font-size: 2rem;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
+}
+
+.button-collapse {
+  position: absolute;
+  margin-top: 1rem;
+  /* will-change: transform; */
+  cursor: pointer;
+  /* -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 .navigation-drawer-top {
   height: 5.6rem;
   width: 100%;
 }
 .navigation-logo {
-  /* position: absolute;
-  left: 3.2rem; */
-  width: auto;
-  height: 32px;
+  position: absolute;
+  /* left: 3.2rem; */
+  transform: translateX(3.2rem);
+  margin-top: 1rem;
+  height: 22.5px;
+  /* width: auto; */
+  /* height: 32px; */
   /* transition: all 0.3 ease; */
+  /* transition: all 0.3s; */
+  /* transform: scale(1.5); */  
+}
+.navigation-drawer.collapse .navigation-logo {
+  /* position: absolute; */
+  /* left: 3.2rem; */
+  width: 28px;
+  /* left: 2.8rem; */
+  transform: translateX(2.8rem);
+  /* transition: all 0.3s; */
+  /* height: 22.5px; */
+  /* width: 20px; */
+  /* left: -1rem; */
+  object-fit: cover;
+  object-position: right;
 }
 /* items */
 .navigation-drawer-items {
@@ -60,17 +116,22 @@ html {
 .drawer-item {
   position: relative;
   height: 5.6rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  will-change: background-color;
 }
 
 .sub-item {
   padding-left: 4.4rem;
   padding-right: 1.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .sub-item-content {
   width: 100%;
@@ -80,9 +141,14 @@ html {
 }
 .sub-item:hover,
 .no-sub:hover {
-  background-color: #dee3e9;
+  background-color: var(--on-surface);
   border-radius: 10rem;
   /* background-clip: content-box; */
+}
+.no-sub:hover {
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  padding-left: 0.4rem;
 }
 .sub-item:hover .drawer-item-text {
   color: var(--primary-blue);
@@ -90,10 +156,10 @@ html {
 .drawer-item-expand {
   position: absolute;
   right: 0.5rem;
-  -webkit-transition: all 0.3s ease;
+  /* -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 .drawer-item-text {
   font-family: "Roboto", sans-serif;
@@ -102,7 +168,7 @@ html {
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: 0.1px;
-  color: #e4e2e3;
+  color: var(--on-surface);
   text-decoration: none;
   /* padding-left: 20px; */
   width: 100%;
@@ -117,8 +183,9 @@ html {
 }
 
 .has-sub:hover {
-  background-color: #dee3e9;
+  background-color: var(--on-surface);
   border-radius: 10rem 0 0 10rem;
+  margin-left: 0.8rem;
 }
 
 .drawer-item:hover .drawer-item-text {
@@ -145,7 +212,7 @@ html {
 .has-sub.active ~ .sub-item {
   opacity: 1;
   height: 5.6rem;
-  transition: height 0.3s ease-out;
+  /* transition: height 0.3s ease-out; */
 }
 
 .item-add {
@@ -186,13 +253,25 @@ html {
   .navigation-drawer-items
   .drawer-group
   .no-sub:hover {
-  /* height: 4rem; */
-  /* width: 4rem; */
-  /* margin-top: 0.8rem; */
-  /* margin-bottom: 0.8rem; */
-  background: transparent;
-  border-radius: 4rem;
-  background-color: #dee3e9;
+  height: 4rem;
+  padding: 0.8rem;
+  width: 5rem;
+  margin: 0.8rem;
+  border-radius: 1.6rem;
+  background-color: var(--on-surface);
+}
+
+.navigation-drawer.collapse
+  .navigation-drawer-items
+  .drawer-group
+  .has-sub:hover
+  .item-icon,
+.navigation-drawer.collapse
+  .navigation-drawer-items
+  .drawer-group
+  .no-sub:hover
+  .item-icon {
+  padding-left: 0.3rem;
 }
 
 .navigation-drawer.collapse {
@@ -201,12 +280,6 @@ html {
 }
 .navigation-drawer.collapse .button-collapse {
   transform: rotate(180deg);
-}
-.navigation-drawer.collapse .navigation-logo {
-  width: 28px;
-  height: 32px;
-  object-fit: none;
-  object-position: left;
 }
 .navigation-drawer-toggle {
   position: absolute;
@@ -220,20 +293,25 @@ html {
   opacity: 0;
 }
 .navigation-drawer-toggle:hover {
-  background-color: #dee3e9;
+  background-color: var(--on-surface);
   border-radius: 10rem;
   cursor: pointer;
 }
 .navigation-drawer.hide {
-  opacity: 0;
+  /* opacity: 0; */
   width: 0;
   transition: all 0.3s ease-out;
+}
+.navigation-drawer.hide .navigation-logo {
+  opacity: 0;
 }
 .menu-divider {
   width: 100%;
   height: 1px;
   padding-left: 0.4rem;
   padding-right: 1.6rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 .menu-divider hr {
   border: 1px solid #cac4d0;

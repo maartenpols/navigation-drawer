@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qbil Trade - Navigation rail/drawer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,21 +12,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+    <svg
+              class="drawer-item-expand"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            ><defs><symbol id="arrow-down">
+            
+              <path
+                d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z"
+                fill="#E4E2E3"
+              /></symbol></defs><use href="#arrow-down"/>
+      </svg>
   </head>
   <body>
+    
     <script src="app.js" type="text/javascript"></script>
+    <nav class="navigation-drawer-button" id="navigation-drawer-button">
+      <span class="material-symbols-outlined">menu</span>
+    </nav>
     <nav class="navigation-drawer" id="navigation-drawer">
       <div class="navigation-drawer-top">
-        <img
-          src="icons/arrow-left.svg"
-          class="button-collapse"
-          id="button-collapse"
-        />
-        <img src="icons/logo-qbil.png" class="navigation-logo" />
+
+        <svg class="button-collapse" id="button-collapse" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 7L9 12L14 17V7Z" fill="#E2E2E5"/>
+          </svg>
+        <img src="icons/qt_new_small.svg" class="navigation-logo" />
       </div>
 
       <div class="navigation-drawer-items" id="navigation-drawer-items">
-        <div class="drawer-group">
+        <div class="drawer-group tooltip" data-text="Purchases">
           <div class="drawer-item has-sub">
             <span class="item-icon">
               <svg
@@ -56,6 +74,7 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+            
               <path
                 d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z"
                 fill="#E4E2E3"
@@ -89,12 +108,26 @@
             <span href="#" class="drawer-item-text">Commission invoice</span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Invoice</span>
+            <span href="#" class="drawer-item-text">Invoice</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       
       <!-- sales-->
-        <div class="drawer-group">
+        <div class="drawer-group tooltip" data-text="Sales">
           <div class="drawer-item has-sub">
             <span class="item-icon">
             <svg
@@ -126,26 +159,96 @@
             </svg></span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Pre-calculation</span>
+            <span href="#" class="drawer-item-text">Pre-calculation</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Offer</span>
+            <span href="#" class="drawer-item-text">Offer</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Contract</span>
+            <span href="#" class="drawer-item-text">Contract</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Invoice</span>
+            <span href="#" class="drawer-item-text">Invoice</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
           <div class="drawer-item sub-item">
             <span href="#" class="drawer-item-text">Proforma invoice</span>
           </div>
           <div class="drawer-item sub-item">
-            <span href="#" class="drawer-item-text">Misc. sales invoice</span>
+            <span href="#" class="drawer-item-text">Misc. sales invoice</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
           </div>
         </div>
         <!-- Accounts & financial-->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Finance">
           <div class="drawer-item has-sub">
             <span class="item-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,9 +270,22 @@
               />
             </svg></span>
           </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Export</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Manage periods</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Intrastat</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Currency hedging</span>
+          </div> 
         </div>
+       
         <!-- Mass & Balance-->
-                        <div class="drawer-group">
+                        <div class="drawer-group tooltip" data-text="Mass & balance">
           <div class="drawer-item has-sub">
             <span class="item-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -191,41 +307,47 @@
               />
             </svg></span>
           </div>
-        </div>
-        <!-- Reports -->
-                        <div class="drawer-group">
-          <div class="drawer-item has-sub">
-            <span class="item-icon">
-           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_329_2014)">
-<path d="M17.8618 0.5V4.49989H21.8617L17.8618 0.5Z" fill="#E4E2E3"/>
-<path d="M16.8619 5.50002V0H1.63867V24H22.3618V5.50002H16.8619ZM7.97633 21.4369H4.28885V10.8535H7.97633V21.4369ZM13.844 21.4369H10.1565V13.8535H13.844V21.4369ZM19.7116 21.4369H16.0241V16.8535H19.7116V21.4369Z" fill="#E4E2E3"/>
-</g>
-<defs>
-<clipPath id="clip0_329_2014">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-</span>
-            <span href="#" class="drawer-item-text">Reports</span
-            ><svg
-              class="drawer-item-expand"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z"
-                fill="#E4E2E3"
-              />
-            </svg></span>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Overview</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Transfers</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Productions</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Reconciliations</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Scopes</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Feedstocks</span>
           </div>
         </div>
+        <!-- Reports -->
+                       
+        <div class="drawer-group tooltip" data-text="Reports">
+          <div class="drawer-item no-sub">
+            <span class="item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <g clip-path="url(#clip0_329_2014)">
+   <path d="M17.8618 0.5V4.49989H21.8617L17.8618 0.5Z" fill="#E4E2E3"/>
+   <path d="M16.8619 5.50002V0H1.63867V24H22.3618V5.50002H16.8619ZM7.97633 21.4369H4.28885V10.8535H7.97633V21.4369ZM13.844 21.4369H10.1565V13.8535H13.844V21.4369ZM19.7116 21.4369H16.0241V16.8535H19.7116V21.4369Z" fill="#E4E2E3"/>
+   </g>
+   <defs>
+   <clipPath id="clip0_329_2014">
+   <rect width="24" height="24" fill="white"/>
+   </clipPath>
+   </defs>
+   </svg>
+   </span>
+            <span href="#" class="drawer-item-text">Reports</span></span>
+          </div>
+        </div>        
         <!-- Orders -->
-        <div class="drawer-group">
+        <div class="drawer-group tooltip" data-text="Orders">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" ><path d="M3 9v6h4l5 5V4L7 9H3zm7-.17v6.34L7.83 13H5v-2h2.83L10 8.83zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z" fill="#e2e2e5"></path></svg></span>
@@ -233,7 +355,7 @@
           </div>
         </div>
         <!-- Production orders-->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Production">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -244,7 +366,7 @@
           </div>
         </div>
         <!-- Lots -->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Lots">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +385,7 @@
           </div>
         </div>
         <!-- Market place -->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Market place">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -274,7 +396,7 @@
           </div>
         </div>
         <!-- Factory-->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Factory">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -286,7 +408,7 @@
           </div>
         </div>
         <!-- PLanning -->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="Planning">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -308,7 +430,7 @@
           </div>
         </div>
         <!-- Logistics Control Center-->
-                <div class="drawer-group">
+                <div class="drawer-group tooltip" data-text="LCC">
           <div class="drawer-item no-sub">
             <span class="item-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -377,6 +499,60 @@
               />
             </svg></span>
           </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Product</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Product groups</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Classification</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Brand</span
+            ><span class="item-add"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C20.8027 6.94749 20.8763 6.8376 20.9264 6.71663C20.9766 6.59565 21.0024 6.46597 21.0024 6.335C21.0024 6.20403 20.9766 6.07435 20.9264 5.95338C20.8763 5.83241 20.8027 5.72252 20.71 5.63L18.37 3.29C18.2775 3.1973 18.1676 3.12375 18.0466 3.07357C17.9257 3.02339 17.796 2.99756 17.665 2.99756C17.534 2.99756 17.4043 3.02339 17.2834 3.07357C17.1624 3.12375 17.0525 3.1973 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z"
+                  fill="#1B1C1C"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
         <!-- Root data -->
         <div class="drawer-group no-rail">
@@ -409,6 +585,27 @@
               />
             </svg></span>
           </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Defaults</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Packaging</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Contract conditions</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Locations</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Financial</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Text lines</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Misc.</span>
+          </div>
         </div>
         <!-- Developers -->
         <div class="drawer-group no-rail">
@@ -434,7 +631,23 @@
               />
             </svg></span>
           </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Unit</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Language</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Data import</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Data import new</span>
+          </div>
+          <div class="drawer-item sub-item">
+            <span href="#" class="drawer-item-text">Migrate e-mail signature to db</span>
+          </div>
         </div>
+
       </div>
       <div class="navigation-drawer-toggle" id="navigation-drawer-toggle"><svg class="nav-toggle" id="nav-toggle" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 18H16V16H3V18ZM3 13H13V11H3V13ZM3 6V8H16V6H3ZM21 15.59L17.42 12L21 8.41L19.59 7L14.59 12L19.59 17L21 15.59Z" fill="#E2E2E5"/>
