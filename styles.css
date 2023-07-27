@@ -3,8 +3,9 @@
   /* --primary-blue: #dee3e9; */
   --on-surface: #dee3e9;
   /* --on-surface: rgba(29, 57, 75, 1);; */
-  --tooltip-background: #6D6D6D;
-  --tooltip-text: #FFF;
+  --tooltip-background: #6d6d6d;
+  --tooltip-text: #fff;
+  --create-new-background: #cae6fd;
   --base-size: 55.5%;
 }
 * {
@@ -14,16 +15,15 @@
 }
 html {
   font-size: var(--base-size);
-  /* font-size: 55%; */
 }
 .item-icon svg path,
 #button-collapse path {
-  fill: var(--on-surface)
+  fill: var(--on-surface);
 }
 
 .navigation-drawer.collapse .tooltip:before {
   content: attr(data-text);
-  position:absolute;
+  position: absolute;
   z-index: 1;
 
   background-color: aqua;
@@ -33,12 +33,12 @@ html {
   text-align: center;
   background-color: var(--tooltip-background);
   color: var(--tooltip-text);
-  display:none;
+  display: none;
   transform: translate(7.2rem, -1.2rem);
   font-family: "Roboto", sans-serif;
 }
 .navigation-drawer.collapse .tooltip:hover:before {
-  display:inline-block;
+  display: inline-block;
   margin-top: 2.8rem;
 }
 .navigation-drawer {
@@ -53,9 +53,7 @@ html {
   transition: width 0.3s ease-out;
 }
 .navigation-drawer-button {
-  position:absolute;
-  /* left: 0; */
-  /* top: 0; */
+  position: absolute;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -63,12 +61,12 @@ html {
 .button-collapse {
   position: absolute;
   margin-top: 1rem;
-  /* will-change: transform; */
+  will-change: transform;
   cursor: pointer;
-  /* -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; */
+  transition: all 0.3s ease;
 }
 .navigation-drawer-top {
   height: 5.6rem;
@@ -76,29 +74,18 @@ html {
 }
 .navigation-logo {
   position: absolute;
-  /* left: 3.2rem; */
   transform: translateX(3.2rem);
   margin-top: 1rem;
   height: 22.5px;
-  /* width: auto; */
-  /* height: 32px; */
-  /* transition: all 0.3 ease; */
-  /* transition: all 0.3s; */
-  /* transform: scale(1.5); */  
+  transition: all 0.3s ease-in-out;
 }
 .navigation-drawer.collapse .navigation-logo {
-  /* position: absolute; */
-  /* left: 3.2rem; */
   width: 28px;
-  /* left: 2.8rem; */
   transform: translateX(2.8rem);
-  /* transition: all 0.3s; */
-  /* height: 22.5px; */
-  /* width: 20px; */
-  /* left: -1rem; */
   object-fit: cover;
   object-position: right;
 }
+
 /* items */
 .navigation-drawer-items {
   display: flex;
@@ -106,8 +93,6 @@ html {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  /* background-color: aqua; */
-  /* padding-left: 1.2rem; */
 }
 
 .drawer-group {
@@ -116,7 +101,6 @@ html {
 .drawer-item {
   position: relative;
   height: 5.6rem;
-  /* width: 100%; */
   display: flex;
   align-items: center;
   padding-left: 0.8rem;
@@ -125,6 +109,8 @@ html {
   white-space: nowrap;
   overflow: hidden;
   will-change: background-color;
+  border-radius: 1.6rem;
+  transition: background-color 0.3s ease;
 }
 
 .sub-item {
@@ -143,7 +129,6 @@ html {
 .no-sub:hover {
   background-color: var(--on-surface);
   border-radius: 10rem;
-  /* background-clip: content-box; */
 }
 .no-sub:hover {
   margin-left: 1.2rem;
@@ -156,10 +141,10 @@ html {
 .drawer-item-expand {
   position: absolute;
   right: 0.5rem;
-  /* -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; */
+  transition: all 0.3s ease;
 }
 .drawer-item-text {
   font-family: "Roboto", sans-serif;
@@ -170,7 +155,6 @@ html {
   letter-spacing: 0.1px;
   color: var(--on-surface);
   text-decoration: none;
-  /* padding-left: 20px; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -212,7 +196,6 @@ html {
 .has-sub.active ~ .sub-item {
   opacity: 1;
   height: 5.6rem;
-  /* transition: height 0.3s ease-out; */
 }
 
 .item-add {
@@ -227,8 +210,7 @@ html {
 .item-add:hover {
   padding: 0.6rem;
   margin-right: 0.8rem;
-  background-color: #cae6fd;
-  /* background-clip: content-box; */
+  background-color: var(--create-new-background);
   border-radius: 10rem;
   transform: scale(1.2);
 }
@@ -291,19 +273,18 @@ html {
   justify-content: center;
   padding: 0.4rem 1.6rem 0.4rem 1.6rem;
   opacity: 0;
+  border-radius: 10rem;
+  transition: background-color 0.3s;
 }
 .navigation-drawer-toggle:hover {
   background-color: var(--on-surface);
-  border-radius: 10rem;
   cursor: pointer;
 }
 .navigation-drawer.hide {
-  /* opacity: 0; */
-  width: 0;
-  transition: all 0.3s ease-out;
-}
-.navigation-drawer.hide .navigation-logo {
   opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 }
 .menu-divider {
   width: 100%;
