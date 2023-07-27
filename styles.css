@@ -50,7 +50,8 @@ html {
   min-height: 100vh;
   background-color: var(--primary-blue);
   padding-top: 1rem;
-  transition: width 0.3s ease-out;
+  transition: width 0.3s ease;
+  overflow: hidden;
 }
 .navigation-drawer-button {
   position: absolute;
@@ -108,9 +109,9 @@ html {
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
-  will-change: background-color;
+  /* will-change: background-color; */
   border-radius: 1.6rem;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .sub-item {
@@ -178,11 +179,16 @@ html {
 
 .has-sub:hover path,
 .has-sub:hover,
+.has-sub:hover .drawer-item-expand,
 .no-sub:hover path,
 .no-sub:hover,
 .navigation-drawer-toggle:hover .nav-toggle path,
 .navigation-drawer-toggle:hover .nav-toggle:hover {
   fill: var(--primary-blue);
+}
+
+.drawer-item-expand {
+  fill: var(--on-surface);
 }
 
 .has-sub ~ .sub-item {
@@ -239,7 +245,7 @@ html {
   padding: 0.8rem;
   width: 5rem;
   margin: 0.8rem;
-  border-radius: 1.6rem;
+  border-radius: 10rem;
   background-color: var(--on-surface);
 }
 
